@@ -92,20 +92,20 @@ The SQL analysis helped convert raw customer data into specific business questio
 **4. Power BI Dashboard & Visualization**
 The final analysis was transformed into an interactive Power BI dashboard to present the major findings in a clear and business-friendly format.
 
-KPI Metrics
-Total Customers
-Total Sales
-Average Transaction
-Average Rating
-Dashboard Visualizations
-Top 10 Products by Sales
-Sales by Category
-Customer Subscription Status
-Sales by Purchase Frequency
-Sales by Gender
-Sales by Age Group
-Sales by Location
-Payment Method Distribution
+-KPI Metrics
+-Total Customers
+-Total Sales
+-Average Transaction
+-Average Rating
+-Dashboard Visualizations
+-Top 10 Products by Sales
+-Sales by Category
+-Customer Subscription Status
+-Sales by Purchase Frequency
+-Sales by Gender
+-Sales by Age Group
+-Sales by Location
+-Payment Method Distribution
 
 **🛠️ Tools & Technologies**
 
