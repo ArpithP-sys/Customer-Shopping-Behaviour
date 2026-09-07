@@ -4,7 +4,7 @@
 This project analyzes customer shopping behaviour to understand sales performance, customer characteristics, purchasing patterns, payment preferences, subscription status, and product/category performance.
 The analysis follows an end-to-end data analytics workflow:
 
-**Python Data Cleaning & EDA → SQL Business Analysis → Power BI Dashboard**
+**Python Data Cleaning & EDA → SQL Business Analysis → Power BI Dashboard → Machine Learning Prediction**
 
 ## 🎯 Problem Statement
 A retail business wants to better understand its customers' shopping behaviour in order to improve sales performance, customer engagement, retention, and marketing strategies.
@@ -149,6 +149,62 @@ The final analysis was transformed into an interactive Microsoft Power BI dashbo
 - Season
 - Discount Applied
 
+## 5. 🤖 Predictive Analysis – Subscription Prediction
+Machine learning was used to predict whether a customer is likely to subscribe based on their demographic and shopping behaviour.
+
+### Target Variable
+The target variable was:
+- `subscription_status`
+
+The problem was treated as a **binary classification problem** with two possible outcomes:
+- Yes – Customer is subscribed
+- No – Customer is not subscribed
+
+### Data Preparation
+The cleaned customer dataset was used for predictive modelling.
+
+The following steps were performed:
+- Selected customer demographic and shopping behaviour features.
+- Removed `customer_id` because it is an identifier and does not provide meaningful predictive information.
+- Encoded categorical variables using one-hot encoding.
+- Split the dataset into training and testing sets using an 80:20 ratio.
+- Used stratified splitting to maintain the class distribution.
+- Applied feature scaling for Logistic Regression.
+- Evaluated model performance using Accuracy, Precision, Recall, and F1-score.
+
+### Models Compared
+Three classification models were evaluated:
+- Logistic Regression
+- Decision Tree
+- Random Forest
+
+### Model Performance
+| Model | Accuracy | Precision | Recall | F1-Score |
+|---|---:|---:|---:|---:|
+| Logistic Regression | 84.6% | 68.1% | 81.0% | 74.0% |
+| Decision Tree | 84.4% | 67.0% | 82.9% | 74.2% |
+| Random Forest | **86.3%** | 66.5% | **99.5%** | **79.7%** |
+
+Random Forest achieved the highest accuracy and F1-score among the three evaluated models and was selected as the best-performing model.
+
+### Important Predictive Features
+The Random Forest model identified the following features as important predictors:
+
+- Promo code usage
+- Discount application
+- Gender
+- Previous purchases
+- Purchase amount
+- Age
+- Review rating
+- Purchase frequency
+
+These features indicate patterns associated with subscription status and can be used to support customer targeting strategies.
+
+### Business Application
+The model can be used as a **customer subscription propensity model** to identify customers who are more likely to subscribe.
+
+High-propensity customers can be prioritized for targeted subscription campaigns and personalized promotional offers. The effectiveness of such campaigns can be further validated using A/B testing.
 
 ## 🛠️ Tools & Technologies
 - Python
@@ -161,11 +217,15 @@ The final analysis was transformed into an interactive Microsoft Power BI dashbo
 - Microsoft Power BI
 - Power Query
 - DAX
+- Scikit-learn
+- Machine Learning
+- Classification
+- Feature Engineering
+- Model Evaluation
 
 
 ## 🔑 Key Insights
 The analysis helps identify:
-
 - Highest-performing products and categories
 - Customer groups contributing the most revenue
 - Differences in purchasing behaviour across age groups
@@ -175,6 +235,10 @@ The analysis helps identify:
 - Customer preferences for different payment methods
 - Locations with stronger sales performance
 - Opportunities for targeted customer campaigns
+- Machine learning can be used to identify customers with a higher likelihood of subscription.
+- Promotional engagement and discount usage were among the strongest predictive features in the Random Forest model.
+- Customer purchase history and demographic characteristics provided additional predictive information.
+- Predictive modelling can support targeted subscription campaigns and customer engagement strategies.
 
 
 ## 💡 Business Recommendations
@@ -201,6 +265,9 @@ Ensure support for payment methods preferred by customers.
 ### ⭐ Customer Experience
 Monitor ratings and customer feedback to identify opportunities for improving products and services.
 
+### 🤖 Predictive Customer Targeting
+Use the subscription prediction model to generate customer propensity scores and prioritize high-probability customers for targeted subscription campaigns.
+
 
 ## 📁 Project Files
 - `customer_shopping_behavior.csv` – Original dataset
@@ -209,6 +276,7 @@ Monitor ratings and customer feedback to identify opportunities for improving pr
 - `Sql_analysis_queries.txt` – SQL business analysis queries
 - `Customer_sales.pbix` – Power BI dashboard
 - `Dashboard_Image.png` – Dashboard preview
+- `ml/subscription_prediction.ipynb` – Machine learning model for subscription prediction
 - `README.md` – Project documentation
 
 ---
