@@ -287,4 +287,4 @@ Use the subscription prediction model to generate customer propensity scores and
 
 **End-to-End Workflow:**
 
-`Python → SQL → Power BI`
+`Python → SQL → Power BI → Machine Learning`
